@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM优化</title>
+</head>
+<body>
+	<ul>
+		<li>
+			console.time()，console.timeEnd()包住函数，可以测出调用所需的时间
+		</li>
+		<li>DOM与JS
+			<ul>
+				<li>尽量独立操作</li>
+				<li>innerHTML与DOM方法对比：Chrome下，DOM比innerHTML性能好；其他浏览器相反</li>
+			</ul>
+		</li>
+		<li>
+			减少DOM操作
+			<ul>
+				<li>节点克隆——————cloneNode</li>
+				<li>访问元素集合——————尽量用局部变量</li>
+				<li>元素节点——————尽量用只获取元素的节点方法
+					<p>eg:childNodes(元素节点，文本节点)</p>
+					<p>children，firstChild，firstElementChild(元素节点)</p>
+				</li>
+				<li>选择器API——————eg:querySelector,querySelectorAll</li>
+			</ul>
+		</li>
+		<li>
+			DOM与浏览器
+			<ul>
+				<li>重排：改变页面内容</li>
+				<li>重绘：浏览器显示内容</li>
+				<li>添加顺序：尽量在appendChild前添加操作</li>
+				<li>合并dom操作：利用cssTest</li>
+				<li>缓存布局信息</li>
+				<li>文档碎片—————createDocumentFragment()</li>
+			</ul>
+		</li>
+		<li>
+			DOM与事件：事件委托
+		</li>
+		<li>
+			DOM与前端模板：能更好的对逻辑和视图分离，MVC架构的基础
+		</li>
+	</ul>
+</body>
+</html>

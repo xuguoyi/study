@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>
+		一个数n，当n小于100就返回n,否则返回100;
+	</p>
+	<script type="text/javascript">
+		// 1
+		if(n<100){
+			return n
+		}else{
+			return 100
+		}
+
+		// 2
+		switch(n<100){
+			case true:
+				return n;
+				break;
+			case false:
+				return 100;
+				break;
+		}
+
+		// 3
+		n<100 ? n : 100;
+
+		// 4
+		Math.min(n,100);
+
+		// 5
+		var arr = [n,100];
+		arr.sort(function(a,b){
+			return a-b;
+		});
+		return arr[0];
+
+		// 6
+		var m = ''+n;
+		for(var i=2;i<m.length && n>0;i++){
+			return 100;
+		}
+		return n;
+
+		// 7 
+		var json = {name:'hello'};
+		var m = n<100 || json;
+		for(var attr in m){
+			return 100;
+		}
+		return n;
+
+		// 8
+		var m = n >= 100 && 100;
+		return m = m || n;
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>返回一个只包含数字类型的一个数组</title>
+</head>
+	<body>
+		<script language="javascript">
+			var str="js123ldka78sdassdfd653";
+			function test(str){
+				var arr = [];
+				var turnOn = false;
+				for(var i=0;i<str.length;i++){
+					var num = str.charAt(i);
+					if(num>=0 && num<=9){
+						if(turnOn){
+							arr[arr.length-1] += str[i]; 
+						}else{
+							arr.push(str[i]);
+						}
+						turnOn = true;
+					}else{
+						turnOn = false;
+					}
+				}
+				return arr;
+			}
+			console.log(test(str));
+
+			// "js123ldka78sdassdfd653das".replace(/(\D)+/g,'*').replace(/^(\D)+|(\D)+$/g,'').split('*')
+		</script>
+	</body>
+</html>

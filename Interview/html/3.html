@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>如何给字符串加千分符</title>
+</head>
+<body>
+	<p> 
+		eg: 3562123761--------3,562,123,761
+	</p>
+	<script type="text/javascript">
+		var str = "3562123761";
+		function addCommaC(str){
+			var newStr = str.split("").reverse();
+			for(var i=0;i<newStr.length;i++){
+				if(i%4==3){
+					newStr.splice(i,0,',');
+				}
+			}
+			return newStr.reverse().join("");
+
+		}
+		console.log(addCommaC(str));
+	</script>
+</body>
+</html>

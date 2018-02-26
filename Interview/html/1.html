@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>写一个字符串转成驼峰的方法</title>
+</head>
+<body>
+	<p>
+		eg:border-bottom-color------borderBottomColor
+	</p>
+	<script type="text/javascript">
+		var str = "border-bottom-color";
+		function toHump(str){
+			var arr = str.split("-")
+			for(var i=1;i<arr.length;i++){
+				arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+			}
+			return arr.join("");
+		}
+		console.log(toHump(str));
+	</script>
+		
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>
+		有一个数n=5，不用for循环，怎么返回[1,2,3,4,5]这样一个数组
+	</p>
+	<script type="text/javascript">
+		var n = 5;
+		function show(n){
+			var arr = [];
+			return (function(){
+				arr.unshift(n);
+				n--;
+				if(n != 0){
+					arguments.callee();
+				}
+				return arr;
+			})();
+		}
+		console.log(show(5))
+	</script>
+</body>
+</html>

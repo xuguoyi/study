@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>history</title>
+</head>
+<body>
+	<input type="button" value="35选7" name="">
+	<div></div>
+
+	<script type="text/javascript">
+		var elInp = document.getElementsByTagName('input')[0];
+		var elDiv = document.getElementsByTagName('div')[0];
+		var now = 0;
+
+		// history:
+		//        pushState:三个参数：数据，标题（没实现），地址（可选）
+		//		  popstate事件：读取数据 event.state
+		//	      注：网站是虚拟的，需在服务器指定对应页面，否则刷新找不到页面
+
+		elInp.onclick = function(){
+			var href = sel(35,7);
+			elDiv.innerHTML = href;
+			history.pushState(href,'',now++)
+				
+		}
+
+		window.onpopstate = function(ev){
+			var href = ev.state || '';
+
+			elDiv.innerHTML = href;
+		}
+
+		// 在固定数里随机生成数
+		function sel(total,num){
+			var arr = [];
+			var no = [];
+
+			for(var i=1;i<=total;i++){
+				arr.push(i);
+			}
+
+			for(var i=0;i<num;i++){
+				no.push(arr.splice(Math.floor(Math.random()*arr.length),1));
+			}
+			return no;
+		}
+	</script>
+</body>
+</html>

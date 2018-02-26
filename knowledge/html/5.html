@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>对象引用</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	//浅拷贝
+		// var obj = {
+		// 	a:10
+		// };
+
+		// function copy(obj){  
+		// 	var newObj = {};
+
+		// 	for(var attr in obj){
+		// 		newObj[attr] = obj[attr];
+		// 	}
+		// 	return newObj;
+		// }
+
+		// var obj2 = copy(obj);
+		// obj2.a = 20;
+		// alert(obj.a);
+
+
+	//深拷贝
+	//利用递归： 函数调用函数自身，执行函数；
+	//          最后一次判断一个终止条件，可以执行递归的动作
+		var obj = {
+			a:{b:10}
+		};
+
+		function copy(obj){  
+			var newObj = {};
+
+			if(typeof obj != 'object'){
+				return obj;
+			}
+
+			for(var attr in obj){
+				newObj[attr] = copy(obj[attr]);
+			}
+			return newObj;
+		}
+
+		var obj2 = copy(obj);
+		obj2.a.b = 20;
+		alert(obj.a.b);
+	</script>
+
+</body>
+</html>

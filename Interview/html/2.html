@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>查找字符串中出现最多的字符和个数</title>
+</head>
+<body>
+	<p>
+		eg:sdjksfssscfssdd------字符最多的是s，出现了7次
+	</p>
+
+	<script type="text/javascript">
+		var str = "sdjksfssscfssdd";
+		function maxlength(str){
+			var obj = {};
+			var num = 0;
+			var value = '';
+
+			for(var i=0;i<str.length;i++){
+				if(!obj[str[i]]){
+					obj[str[i]] = [];
+				}
+				obj[str[i]].push(str[i]);
+			}
+			for(var attr in obj){
+				if(num<obj[attr].length){
+					num = obj[attr].length;
+					value = obj[attr][0];
+				}
+			}
+			return '最多的字符是'+value+'，出现了'+num;
+		}
+		console.log(maxlength(str));
+			
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>枚举算法</title>
+	<style type="text/css">
+		div{
+			width:200px;
+		}
+		p{
+			text-align: right;
+		}
+		span{
+			margin-left:10px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>
+			<span>枚</span><span>举</span><span>算</span><span>法</span><span>题</span>
+		</p>
+		<p>
+			<span style="position: absolute;left:0;">*</span><span>枚</span>
+		</p>
+		<hr>
+		<p>
+			<span>题</span><span>题</span><span>题</span><span>题</span><span>题</span><span>题</span>
+		</p>
+	</div>
+	<input type="button" value="计算" name="">
+
+	<script type="text/javascript">
+		var elsP = document.getElementsByTagName('p');
+		var elSpan1 = elsP[0].getElementsByTagName('span');
+		var elSpan2 = elsP[1].getElementsByTagName('span');
+		var elSpan3 = elsP[2].getElementsByTagName('span');
+		var elBtn = document.getElementsByTagName('input')[0];
+
+		elBtn.onclick = function(){
+			for(var a=1;a<=9;a++){
+				for(var b=1;b<=9;b++){
+					for(var c=1;c<=9;c++){
+						for(var d=1;d<=9;d++){
+							for(var e=1;e<=9;e++){
+								if((a*10000+b*1000+c*100+d*10+e)*a == e*111111){
+							  		elSpan1[0].innerHTML = a;
+									elSpan1[1].innerHTML = b;
+									elSpan1[2].innerHTML = c;
+									elSpan1[3].innerHTML = d;
+									elSpan1[4].innerHTML = e;
+									elSpan2[1].innerHTML = a;
+									for(var i=0;i<elSpan3.length;i++){
+										elSpan3[i].innerHTML = e;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+			
+	</script>
+		
+</body>
+</html>

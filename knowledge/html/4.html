@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>闭包</title>
+</head>
+<body>
+	<p>闭包：函数嵌套函数，内部函数可以引用外部函数的参数和变量，参数和变量不会被垃圾回收机制所收回</p>
+	<p>优点：希望一个变量长期驻扎在内存当中；避免全局变量的污染；私有成员的存在</p>
+	<p>用法：模块化代码；在循环中直接找到对应元素的索引</p>
+	<p>注意：IE下会引发内存泄漏，可以在函数结束后给其设置为null</p>
+	<script type="text/javascript">
+		function aa(){
+			var xx = "wangbao";
+			setInterval(function(){
+				console.log('我是方法aa',xx);
+			},3000)
+			function fn(newName){
+				xx = newName;
+			}
+			return fn;
+		}
+		var ffffff = aa();
+
+		var elsP = document.getElementsByTagName('p');
+		for(var i=0;i<elsP.length;i++){
+			// (function(i){
+			// 	elsP[i].onclick = function(){
+			// 		alert(i);
+			// 	}
+			// })(i);
+
+			// 或者
+			elsP[i].onclick = (function(i){
+				return function(){
+					alert(i);
+				}
+			})(i)
+		}
+
+		// elsP[i].onclick = null;
+	</script>
+</body>
+</html>

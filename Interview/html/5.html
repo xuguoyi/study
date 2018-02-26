@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>限制条件补全代码1</title>
+</head>
+<body>
+	<p>
+		a,b两个变量，不用第三个变量来切换两个数的值
+	</p>
+	<script type="text/javascript">
+		var a = 1,b = 2;
+		a = a+b;  
+		b = a-b;  
+		a = a-b;  
+		console.log(a,b);
+
+		var c = 5, d = 7;
+		c = c^d;
+		d = c^d;
+		c = c^d;
+		console.log(c,d);
+
+
+		var x = "王宝",y = "徐国一";
+		x = [x,y];
+		y = x[0];
+		x = x[1];
+		console.log(x,y);
+
+	</script>
+</body>
+</html>

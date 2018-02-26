@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onhashchange</title>
+</head>
+<body>
+	<input type="button" value="35选7" name="">
+	<div></div>
+
+	<script type="text/javascript">
+		var elInp = document.getElementsByTagName('input')[0];
+		var elDiv = document.getElementsByTagName('div')[0];
+		var obj = {};
+		
+		// onhashchange:事件，当hash值有变化的时候，就触发
+
+		elInp.onclick = function(){
+			var href = sel(35,7);
+			var ord = Math.random();
+			elDiv.innerHTML = href;
+			obj[ord] = href;
+			window.location.hash = ord;
+				
+		}
+
+		window.onhashchange = function(){
+			var href = obj[window.location.hash.substring(1)] || ''; //去除#
+			elDiv.innerHTML = href;
+		}
+
+		// 在固定数里随机生成数
+		function sel(total,num){
+			var arr = [];
+			var no = [];
+
+			for(var i=1;i<=total;i++){
+				arr.push(i);
+			}
+
+			for(var i=0;i<num;i++){
+				no.push(arr.splice(Math.floor(Math.random()*arr.length),1));
+			}
+			return no;
+		}
+	</script>
+</body>
+</html>
